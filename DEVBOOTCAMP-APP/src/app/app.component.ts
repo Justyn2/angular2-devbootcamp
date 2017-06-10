@@ -8,4 +8,6 @@ import { Component, OnInit } from '@angular/core';
 
 export class AppComponent {
   title = 'An Angular App';
+  items = [{price:Math.floor(Math.random()*100.00) , title:'Item# '+ Math.floor(Math.random()*1000), tags:[{title:'onetag'},{title:'twotag'}] }, ]; ;
+  featuredItems = [{price:Math.floor(Math.random()*100.00) , title:'Item# '+ Math.floor(Math.random()*1000), tags:[{title:'anothertag'},{title:'tag'}] }, ];;
 }

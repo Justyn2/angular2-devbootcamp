@@ -1,7 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ITag } from '../tag/tag.component';
 export interface IItem{
 title:string;
 price:number;
+tags:ITag[];
 }
 
 @Component({
