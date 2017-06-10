@@ -5,5 +5,5 @@
     <div class="item-tile-price" style="font-weight:100">
     {{item.price}}
     </div>
-    <app-tag-list [tags]="item.tags"></app-tag-list>
+    <app-tag-list [tags]="item.tags"></app-tag-list> <app-add-tag (add)="onAddTag($event)" ></app-add-tag>
 </div>

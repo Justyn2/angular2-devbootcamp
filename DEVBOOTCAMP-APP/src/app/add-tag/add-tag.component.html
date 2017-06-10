@@ -1,0 +1,7 @@
+
+<button *ngIf="!edit" (click)="onClick()">+</button>
+<div *ngIf="edit">
+    <input type="text" [value]="text" [formControl]="tagInput"/>
+    <button (click)="onAdd()">✓</button>
+    <button (click)="onCancel()">x</button>
+</div>

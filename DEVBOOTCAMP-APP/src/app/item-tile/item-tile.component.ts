@@ -13,6 +13,9 @@ tags:ITag[];
 })
 export class ItemTileComponent implements OnInit {
   @Input() public item:IItem;
+  onAddTag(title){
+  this.item.tags.push({title});
+  }
   constructor() { }
 
   ngOnInit() {
