@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-
+import { InMemoryItemRepository, ItemRepositoryToken } from './item-repository';
 import { AppComponent } from './app.component';
 import { ItemTileComponent } from './item-tile/item-tile.component';
 import { ItemTileListComponent } from './item-tile-list/item-tile-list.component';
@@ -23,7 +23,7 @@ import { AddTagComponent } from './add-tag/add-tag.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [{provide: ItemRepositoryToken, useClass: InMemoryItemRepository}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

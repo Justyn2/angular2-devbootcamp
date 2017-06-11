@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { IItem } from './item-tile/item-tile.component';
+import { ItemRepository, ItemRepositoryToken } from './item-repository';
 
 @Component({
   selector: 'app-root',
@@ -6,8 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'An Angular App';
-  items = [{price:Math.floor(Math.random()*100.00) , title:'Item# '+ Math.floor(Math.random()*1000), tags:[{title:'onetag'},{title:'twotag'}] }, ]; ;
-  featuredItems = [{price:Math.floor(Math.random()*100.00) , title:'Item# '+ Math.floor(Math.random()*1000), tags:[{title:'anothertag'},{title:'tag'}] }, ];;
+  items :IItem[];
+  featuredItems:IItem[]=[];
+  constructor(@Inject(ItemRepositoryToken) todoRepository: ItemRepository){
+  this.items = todoRepository.getItems();
+  this.featuredItems = todoRepository.getFeaturedItems();
+  }
+  ngOnInit(){
+
+  }
 }
